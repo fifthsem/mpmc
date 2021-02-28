@@ -1,0 +1,19 @@
+
+MOV SI,1500 
+MOV DI,3000   
+MOV AX,[SI] 
+MOV BX,ff  
+add BX,02  300b
+INC CL
+sub ax,bx 
+Jnz 300b
+MOV [SI],CL 
+HLT
+
+
+-e 4000
+072a:4000  00.10
+
+
+-d 5000 5002
+072a:5000   04  00  00

@@ -1,0 +1,19 @@
+mov si,2000 	initialize of si to 2000 location
+mov di,5000	initialize of di to 5000 location
+mov cl,[si]	load the data from si to cl
+mov al,cl	cl content is moved to al
+mul al		al data is multipled
+add bl,al	add bl to al
+loop (mov al,cl-location address)
+mov [di],bx
+hlt
+
+-e 2000
+072A:2000 00.5
+
+-t
+-d 5000 5002
+-u opcode
+answer 37
+
+sum of  square of n

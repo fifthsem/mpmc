@@ -1,0 +1,22 @@
+mov si,2000
+mov di,5000
+mov cl,[si]	load the data from si to cl
+mov bx,00	initialize bx with 0
+mov al,cl	load the al to cl
+mul al		mul al
+mul cl		cl
+add bx,ax	ax data is added to bx
+loop (location of mov al,cl)
+mov [di],bx	load the di location with bx
+hlt
+ 
+-e 2000
+072A:2000 00.5
+
+-t
+-d 5000 5002
+answer E1 00 00
+
+-u(opcode)
+
+sum of cubes

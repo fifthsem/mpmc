@@ -1,0 +1,16 @@
+mov al,[2000]
+mov bl,[2000]
+xchg al,bl
+mov [2000],al
+mov [2001],bl
+hlt
+
+-e 2000
+073f:2000 00.1 00.2
+
+-t 
+
+-d 2000 2001
+073f:5000 02 01(answer)
+
+exchange of data

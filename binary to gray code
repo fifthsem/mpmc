@@ -1,0 +1,16 @@
+mov si,2000	set the si value to 2000
+mov di,5000	set the di value to 5000
+mov al,[si] 	mov si to al
+mov bl,al	move al data to bl
+shr al,1	shift al to one bit
+xor bl,al	performing ex-or to al
+mov [di],bl
+hlt
+
+-e 2000
+072A:2000 00.8
+
+-t
+-d 5000 5002
+answer 0c 00 00
+-u (opcode)

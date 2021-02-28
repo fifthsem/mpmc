@@ -1,0 +1,18 @@
+mov si,2000
+mov di,5000
+mov al,[si]
+mov bl,[si]
+mov al,o4
+and al,f0
+and bl,0f
+mov bh,a
+ror al,cl
+mul bh
+add al,bl 
+mov [di],ax
+hlt
+-e 2000
+072A:2000 00.16
+-T
+-D 5000 5002 
+answer 10 00 00

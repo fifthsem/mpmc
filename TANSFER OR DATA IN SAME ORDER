@@ -1,0 +1,16 @@
+mov si,3000
+mov di,5000
+mov cl,09
+mov ax,[si]
+mov [di],ax
+INC si
+INC di
+LOOP (location of the ax,[si])
+HLT
+ 
+-e 3000
+073f:3000 00.1 00.2 00.3 00.4 00.5
+-e 3008
+073f:3008 00
+
+-d 5000 5008

@@ -1,0 +1,15 @@
+mov si,2000
+mov cl,a
+mov al,1
+mov [si],al
+inc si
+mov [si],al
+dec si
+add al,[si]
+inc si
+inc si
+loop (mov [si],al address)
+hlt
+
+-d 2000 2009
+073f:2000 01 01 02 05 08 0D 15 22 37

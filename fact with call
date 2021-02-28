@@ -1,0 +1,22 @@
+mov si,2000
+mov di,5000
+mov ax,0001
+call 7000(address of next  mov cl,0)
+mov [di],ax
+hlt
+
+
+mov cl,0
+mov cx,0
+mov cl,[si]
+mul cl
+loop (address of mul cl)
+ret
+
+-e 2000
+073f:2000 5
+
+-t
+
+-d 5000 5002
+073f:5000 78 00 00(answer)

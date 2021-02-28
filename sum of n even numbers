@@ -1,0 +1,17 @@
+mov si,2000
+mov di,5000
+moc cl,[si]
+mov ax,0
+add ax,2    300b
+add dx,ax
+loop 300b
+mov [di],dx
+hlt
+
+
+
+-e 2000
+   00.5
+   
+-d  5000 5002
+   1e 00 00

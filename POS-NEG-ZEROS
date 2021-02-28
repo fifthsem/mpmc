@@ -1,0 +1,35 @@
+MOV SI,2500H      Initialize SI to 2500 Memory Location
+MOV DI,3500H      Initialize DI to 3500 Memory Location
+MOV CL,0A         Mov e 0A to CL count register
+MOV BL,00         Mov e 00 to BL register
+MOV BH,00         Mov e 00 to BH register
+MOV DL,00         Mov e 00 to DL register
+
+L2   MOV AL,[SI]  Move the content of [SI] to AL
+SUB AL,00         Subtract AL content with 00
+JZ    L1          Jump Zero to L1
+RCL AL,01         Rotate left with carry 
+JC L3             Jump carry to L3
+INC DL            Increment DL content 
+JMP L4            Jump to L4
+
+L3    INC BH      Increment BL Content
+JMP L4            Jump to L4
+L1  INC BL        Increment BL Content
+
+L4  INC SI        Increment SI Location
+LOOP L2           Loop back to L2
+MOV [DI],BL       Move BL content to [DI] ML (0)
+MOV [DI+1],BH     Move BH content to [DI+1] ML(-)
+MOV [DI+2],DL     Move DL content to [DI+2] ML(+)
+HLT               End of the program
+
+
+
+I/P:
+
+E 2500 00  00  FF  FF   11  11 22  22 33  33
+
+O/P:
+
+D 3500  3503:  02 (0)  02 (-)  06 (+)

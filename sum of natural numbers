@@ -1,0 +1,17 @@
+mov si,1000 	initialize si to 1000 location
+mov di,5000 	initialize di to 5000 location
+mov al,[si]
+add cl,al
+loop ( addition loop)
+mov [di],cl
+hlt
+
+-e 1000
+072A:2000 00.A
+-e 2000
+072A:2000 00.5
+
+-t
+
+-d  5000 5002
+answer 37

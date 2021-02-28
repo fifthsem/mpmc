@@ -1,0 +1,47 @@
+MOV SI,[1700]         Move the content of 1700  to  SI 
+MOV BX,[1702]         Move the content of 1702 to Bx
+MOV AX,SI             Move the content of SI to AX
+SUB AX,BX             Subtract the contents of BX with Ax register
+MOV [1500],AX         Move the content of  AX to 1500 memory location
+CALL 4000             Call the procedure
+MOV [8000],AX         Move the content of  AX to 8000
+INC BX                Increment Bx register
+MOV AX,BX             Move the content of BX to AX
+
+L2          INC BX    Increement BX register
+CMP SI,BX             Compare the contents of BX with Si 
+JB L1                 Jump if borrow
+MULBX                 Multiply the contents of BX wirh Ax register
+JMP L2                Jump to the given location
+
+L1    MOV BX,[8000]   Move the content of 8000 to BX register
+DIV BX                Divide the contents of BX with Ax
+MOV [6200],AX         Move the content of  AX to 6200 memory location
+HLT                   End of the program
+
+
+
+
+CALL 4000
+
+
+MOV CX,[1500]         Move the content of 1500 to CX register
+MOV AX,0001           InitializingAx to 0001
+
+L1      MUL CX        Multiply the contents of CX  with AX register
+LOOP L1               Loop back to the given location
+MOV  [3000],AX        Move the content of AX to 3000 memory location
+RET                   Return to the program
+
+
+
+
+I/P:
+
+E 1700
+05      00     03     00
+
+O/P:
+
+D 6200  6201
+0A      00

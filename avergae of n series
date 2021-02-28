@@ -1,0 +1,19 @@
+mov si,2000  initialize si to 2000 location
+mov di,5000  initialize di to 5000 location
+mov cl,05    initialize cl to 05
+mov bl,05    intitalize bl to 05
+mov al,00    intitalize al to 00
+add al,[si]  add the si content to al
+inc si       increment
+loop (location of the add)
+div bl       dive al data with bl data
+mov [di],al  move al data with bl data
+hlt
+-e 2000
+0723:2000 00.A 00.F 00.2 00.3 00.4
+
+-t
+-d 5000 5002
+-u (opcode-staring location address) 
+
+avergae of n series

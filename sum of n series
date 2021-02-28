@@ -1,0 +1,20 @@
+mov si,2000 initialize si to 2000 location
+mov di,5000 initialize di to 5000 location
+mov al,00   initalize al to 00
+mov cl,05   initalize cl to 05
+add al,[si] add content in si to al register
+INC si      increment ah register
+loop (location of add) run the loop
+mov [di],al  mov the al data to di
+hlt
+
+-e 2000
+072a:2000 00.A 00.F 00.2 00.3 00.4
+
+-t
+-d 5000 5002
+answer 22
+
+opcode -u staring address 
+
+sum of n series

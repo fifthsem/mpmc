@@ -1,0 +1,21 @@
+mov ax,[2000]
+mov bx,[2002]
+add ax,bx
+mov [5000],ax
+hlt
+
+sub ax,bx
+
+mul bx
+
+
+div bx
+
+
+e 2000
+072A:2000 00.11 00.22
+
+-t
+
+-d 5000 5002
+072A:5000 

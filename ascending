@@ -1,0 +1,20 @@
+mov cl,05
+mov bl,04     3002
+mov si,2000
+mov al,[si]      3007
+cmp al,[si+1]
+jb  3013
+xchg al,[si+1]
+xchg al,[si]
+inc si            3013
+dec bl
+jnz 3007
+dec cl
+jnz 3002
+hlt
+
+
+-e 2000
+    00.f  00.2  00.4  00.9  00.a
+-d  2000  2004
+     02   04    09  0a   0f

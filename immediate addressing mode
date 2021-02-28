@@ -1,0 +1,18 @@
+mov ax,aaaa
+mov bx,1111
+add ax,bx
+mov [5000],ax
+hlt
+
+
+
+sub ax,bx
+
+
+
+mul bx
+
+
+
+
+div bx

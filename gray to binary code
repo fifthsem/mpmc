@@ -1,0 +1,23 @@
+mov si,2000
+mov di,5000
+mov al,[si]
+mov bl,al
+mov cl,07
+shr bl,01
+xor al,bl
+loop (shr location address)
+mov [di],al
+hlt
+
+-e 2000
+072A:2000 00.C
+
+-t
+
+-d 5000 5002
+072A:5000 08 00 00
+ANSWER 8
+
+-u(opcode)
+
+gray to binary code
